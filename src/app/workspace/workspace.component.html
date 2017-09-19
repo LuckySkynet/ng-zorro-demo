@@ -1,0 +1,28 @@
+<nz-layout>
+  <!-- 侧边栏 -->
+  <nz-sider nzCollapsible [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <app-sidebar [isCollapsed]="isCollapsed"></app-sidebar>
+  </nz-sider>
+
+  <nz-layout>
+    <!-- 顶部 -->
+    <nz-header class="header">
+      <app-header [(isCollapsed)]="isCollapsed"></app-header>
+    </nz-header>
+
+    <nz-content class="main">
+      <!-- 面包屑导航 -->
+      <app-breadcrumb></app-breadcrumb>
+
+      <!-- 内容体 -->
+      <router-outlet></router-outlet>
+
+    </nz-content>
+
+    <!-- 页脚 -->
+    <nz-footer class="footer">
+      <app-footer></app-footer>
+    </nz-footer>
+  </nz-layout>
+
+</nz-layout>
