@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +10,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   validateForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder,
+    private router: Router) {
   }
 
   ngOnInit() {
@@ -24,6 +27,10 @@ export class LoginComponent implements OnInit {
     for (const i of Object.keys(this.validateForm.controls)) {
       this.validateForm.controls[i].markAsDirty();
     }
+  }
+
+  toRegist() {
+    this.router.navigate(['regist']);
   }
 
 }
